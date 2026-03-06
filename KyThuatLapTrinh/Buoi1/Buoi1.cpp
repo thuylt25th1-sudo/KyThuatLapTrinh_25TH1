@@ -1,20 +1,44 @@
-// Buoi1.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+#include <vector>
+using namespace std;
+struct SinhVien {
+	string hoten;
+	int tuoi;
+	bool gioitinh;
+	string diachi;
+};
+int main() {
+	SinhVien b;
+	b.hoten = "Nguyen Van A";
+	b.tuoi = 20;
+	b.gioitinh = true;
+	b.diachi = "Tay Ninh";
 
-int main()
-{
-    std::cout << "Hello World!\n";
+	SinhVien c;
+	c.hoten = "Tran Thi B";
+	c.tuoi = 30;
+
+	//SinhVien ds[50]; 
+	vector <SinhVien> mang;
+	mang.push_back(b);
+	mang.push_back(c);
+	for (int i = 0; i < mang.size(); i++) {
+		cout << "Sinh vien " << (i + 1) << endl;
+		cout << "\t+ Ho ten: " << mang[i].hoten << endl;
+		cout << "\t+ Tuoi: " << mang[i].tuoi << endl;
+	}
+	/*int a = 5;
+	int* p = &a;
+	a += 6;
+	a = *p + 2;
+	cout << *p;*/
+
+	/*vector <float> diemthi;
+	diemthi.push_back(5.5);
+	diemthi.push_back(4);
+	diemthi.push_back(6);
+	diemthi.pop_back();
+	for (int i = 0; i < diemthi.size(); i++) {
+		cout << diemthi[i] << endl;
+	}*/
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
